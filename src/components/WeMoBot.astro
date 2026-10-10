@@ -1,0 +1,38 @@
+---
+const commands = [
+  { cmd: '#weather', desc: 'Daily forecast — high/low, rain chance, sunrise' },
+  { cmd: '#alerts', desc: 'NWS storm warnings within 5 minutes' },
+  { cmd: '#tropics', desc: 'Hurricane advisories and tropical storm tracking' },
+  { cmd: '#nodes', desc: "Who's online on the mesh right now" },
+  { cmd: '#moon', desc: 'Moon phase and rise/set times (no internet needed)' },
+  { cmd: '#sun', desc: 'Sunrise/sunset computed locally' },
+  { cmd: '#help', desc: 'Full command list' },
+];
+---
+<section id="wemobot" class="py-24 border-t border-white/5">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="flex items-start gap-4 mb-4">
+      <div>
+        <h2 class="text-3xl font-bold">WeMoBot</h2>
+        <p class="text-mesh-muted font-mono text-sm mt-1">node !da408150 · online 24/7</p>
+      </div>
+    </div>
+    <p class="text-mesh-muted text-lg mb-10 max-w-2xl">
+      Our always-on mesh utility bot. Send it a command on channel 0 and it responds directly.
+      It also auto-broadcasts a daily 7am forecast and instant NWS severe weather alerts.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-3">
+      {commands.map(({ cmd, desc }) => (
+        <div class="bg-mesh-surface rounded-lg px-5 py-4 border border-white/5 flex gap-4 items-start">
+          <code class="text-mesh-green font-mono text-sm shrink-0 pt-0.5">{cmd}</code>
+          <span class="text-mesh-muted text-sm">{desc}</span>
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-6 text-sm text-mesh-muted">
+      Auto-broadcasts: daily forecast at <span class="text-mesh-text">7:00 AM CT</span> · instant severe weather alerts anytime.
+    </p>
+  </div>
+</section>
