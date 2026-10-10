@@ -1,2 +1,12 @@
 @import "tailwindcss";
-@config "../../tailwind.config.mjs";
+
+@theme {
+  --color-mesh-green: #1a8a50;
+  --color-mesh-green-light: #67ea94;
+  --color-mesh-bg: #0f1117;
+  --color-mesh-surface: #1a1d27;
+  --color-mesh-text: #e2e8f0;
+  --color-mesh-muted: #94a3b8;
+
+  --font-family-mono: "JetBrains Mono", "Fira Code", monospace;
+}
