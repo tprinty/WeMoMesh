@@ -1,0 +1,37 @@
+---
+const specs = [
+  { label: 'Platform', value: 'Meshtastic' },
+  { label: 'Frequency', value: '915 MHz (US ISM band)' },
+  { label: 'Preset', value: 'LongFast' },
+  { label: 'Power', value: 'Solar + battery backup on repeater nodes' },
+  { label: 'Coverage', value: 'Semmes · West Mobile · expanding' },
+];
+---
+<section id="hardware" class="py-24 border-t border-white/5">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-4">Our Hardware</h2>
+    <p class="text-mesh-muted text-lg mb-10 max-w-2xl">
+      All repeater nodes run stock Meshtastic firmware. No proprietary software, no lock-in.
+    </p>
+
+    <div class="bg-mesh-surface rounded-xl border border-white/5 overflow-hidden">
+      <table class="w-full text-sm">
+        <tbody>
+          {specs.map(({ label, value }, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white/2' : ''}>
+              <td class="px-6 py-4 font-mono text-mesh-muted w-48">{label}</td>
+              <td class="px-6 py-4 text-mesh-text">{value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-6 text-sm text-mesh-muted">
+      Want to view live node locations?{' '}
+      <a href="https://meshmap.net" target="_blank" rel="noopener" class="text-mesh-green hover:underline">
+        meshmap.net →
+      </a>
+    </p>
+  </div>
+</section>
