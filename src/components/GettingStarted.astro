@@ -1,0 +1,53 @@
+---
+const radios = [
+  { name: 'Heltec WiFi LoRa 32 v3', price: '~$20', note: 'Budget pick, small form factor' },
+  { name: 'LILYGO T-Beam', price: '~$35', note: 'Built-in GPS, popular all-rounder' },
+  { name: 'RAK WisBlock Meshtastic Starter', price: '~$40', note: 'Modular, good for fixed nodes' },
+];
+---
+<section id="get-started" class="py-24 border-t border-white/5">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-4">Get Started</h2>
+    <p class="text-mesh-muted text-lg mb-12 max-w-2xl">
+      You need one piece of hardware and about 20 minutes. That's it.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <div class="flex flex-col gap-2">
+        <div class="w-8 h-8 rounded-full bg-mesh-green text-white flex items-center justify-center font-bold text-sm shrink-0">1</div>
+        <h3 class="font-semibold text-lg">Buy a radio</h3>
+        <div class="space-y-3 mt-2">
+          {radios.map(r => (
+            <div class="bg-mesh-surface rounded-lg p-4 border border-white/5">
+              <p class="font-medium text-sm">{r.name}</p>
+              <p class="text-mesh-green font-mono text-sm">{r.price}</p>
+              <p class="text-mesh-muted text-xs mt-1">{r.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <div class="w-8 h-8 rounded-full bg-mesh-green text-white flex items-center justify-center font-bold text-sm shrink-0">2</div>
+        <h3 class="font-semibold text-lg">Flash Meshtastic</h3>
+        <p class="text-mesh-muted text-sm mt-2">
+          Use the web flasher at <a href="https://flasher.meshtastic.org" target="_blank" rel="noopener" class="text-mesh-green hover:underline">flasher.meshtastic.org</a> — plug in your radio via USB, click Flash. No command line needed.
+        </p>
+        <p class="text-mesh-muted text-sm mt-2">
+          Set your region to <span class="text-mesh-text font-mono">US</span> and leave the preset as <span class="text-mesh-text font-mono">LongFast</span>.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <div class="w-8 h-8 rounded-full bg-mesh-green text-white flex items-center justify-center font-bold text-sm shrink-0">3</div>
+        <h3 class="font-semibold text-lg">Power it on</h3>
+        <p class="text-mesh-muted text-sm mt-2">
+          If you can hear our repeater, you're on the mesh. Say hello on channel 0.
+        </p>
+        <p class="text-mesh-muted text-sm mt-2">
+          <strong class="text-mesh-text">Antenna tip:</strong> Elevation matters more than anything. An attic or rooftop mount dramatically increases your range.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
