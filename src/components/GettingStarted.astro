@@ -1,8 +1,8 @@
 ---
 const radios = [
-  { name: 'Heltec WiFi LoRa 32 v3', price: '~$20', note: 'Budget pick, small form factor' },
-  { name: 'LILYGO T-Beam', price: '~$35', note: 'Built-in GPS, popular all-rounder' },
-  { name: 'RAK WisBlock Meshtastic Starter', price: '~$40', note: 'Modular, good for fixed nodes' },
+  { name: 'Heltec WiFi LoRa 32 v3', price: '~$20', note: 'Budget pick, small form factor', url: 'https://www.amazon.com/dp/B0DRSJV1ZL/' },
+  { name: 'LILYGO T-Beam', price: '~$46', note: 'Built-in GPS, popular all-rounder', url: 'https://www.amazon.com/dp/B0B63FV7FR/' },
+  { name: 'RAK WisBlock Meshtastic Starter', price: '~$40', note: 'Modular, good for fixed nodes', url: 'https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit' },
 ];
 ---
 <section id="get-started" class="py-24 border-t border-white/5">
@@ -18,11 +18,11 @@ const radios = [
         <h3 class="font-semibold text-lg">Buy a radio</h3>
         <div class="space-y-3 mt-2">
           {radios.map(r => (
-            <div class="bg-mesh-surface rounded-lg p-4 border border-white/5">
+            <a href={r.url} target="_blank" rel="noopener" class="block bg-mesh-surface rounded-lg p-4 border border-white/5 hover:border-mesh-green/40 transition-colors">
               <p class="font-medium text-sm">{r.name}</p>
               <p class="text-mesh-green font-mono text-sm">{r.price}</p>
               <p class="text-mesh-muted text-xs mt-1">{r.note}</p>
-            </div>
+            </a>
           ))}
         </div>
       </div>
