@@ -1,0 +1,25 @@
+---
+const links = [
+  { href: '#about', label: 'About' },
+  { href: '#wemobot', label: 'WeMoBot' },
+  { href: '#emergency', label: 'Emergency' },
+  { href: '#get-started', label: 'Get Started' },
+  { href: '#community', label: 'Community' },
+];
+---
+<nav class="fixed top-0 w-full z-50 bg-mesh-bg/90 backdrop-blur border-b border-mesh-green/20">
+  <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 font-mono text-mesh-green font-semibold text-sm">
+      <span class="text-lg">⬡</span> WeMoMesh
+    </a>
+    <ul class="hidden md:flex gap-6">
+      {links.map(l => (
+        <li>
+          <a href={l.href} class="text-sm text-mesh-muted hover:text-mesh-green transition-colors">
+            {l.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
